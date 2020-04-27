@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "143133663943",
+    "firebase_url": "https://dailyenglish-887f0.firebaseio.com",
+    "project_id": "dailyenglish-887f0",
+    "storage_bucket": "dailyenglish-887f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143133663943:android:7e83638689de173b3b94e2",
+        "android_client_info": {
+          "package_name": "com.denis7610.dailyenglish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143133663943-kfab6ti9au3jkcpj0d8t0ui5uu5r6lin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNB5zwBbUn66gwh9GNJLQgOt6TIhJhwyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143133663943-kfab6ti9au3jkcpj0d8t0ui5uu5r6lin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
