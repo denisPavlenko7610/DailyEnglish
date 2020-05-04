@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textTranslate;
     private TextView textTranscription;
     private AdView adView;
+    private int count;
 
     String worldText;
 
@@ -112,11 +113,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showCount() {
-        int count = 0;
+        count = 0;
         if (data.size() != 0) {
             count = data.size() / 3;
         }
-        String countString = "Images: " + count;
+        String countString = "Pictures left: " + count;
         countText.setText(countString);
     }
 
@@ -166,6 +167,30 @@ public class MainActivity extends AppCompatActivity {
     public void showLicense(View view) {
         Intent intent = new Intent(this, LicenseActivity.class);
         startActivity(intent);
+    }
+
+    public void sentToGoogleTranslate(View view) {
+        try {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT, worldText);
+            intent.putExtra("key_text_input", worldText);
+            intent.putExtra("key_text_output", "");
+            intent.putExtra("key_language_from", "en");
+            intent.putExtra("key_language_to", "mal");
+            intent.putExtra("key_suggest_translation", "");
+            intent.putExtra("key_from_floating_window", false);
+            intent.setComponent(new ComponentName(
+                    "com.google.android.apps.translate",
+                    //Change is here
+                    //"com.google.android.apps.translate.HomeActivity"));
+                    "com.google.android.apps.translate.TranslateActivity"));
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            // TODO Auto-generated catch block
+            Toast.makeText(getApplication(), "Sorry, No Google Translation Installed",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void generateQuizes() {
@@ -437,34 +462,140 @@ public class MainActivity extends AppCompatActivity {
         data.add("soup");
         data.add("[suːp]");
 
+        data.add("ic_palm");
+        data.add("palm");
+        data.add("[pɑːm]");
 
+        data.add("ic_pharaoh");
+        data.add("pharaoh");
+        data.add("[ˈferoʊ]");
 
+        data.add("ic_pyramid");
+        data.add("pyramid");
+        data.add("[ˈpɪrəmɪd]");
 
+        data.add("ic_snake");
+        data.add("snake");
+        data.add("[sneɪk]");
+
+        data.add("ic_amphora");
+        data.add("amphora");
+        data.add("[ˈæmfərə]");
+
+        data.add("ic_flower");
+        data.add("flower");
+        data.add("[ˈflaʊər]");
+
+        data.add("ic_camel");
+        data.add("camel");
+        data.add("[ˈkæml]");
+
+        data.add("ic_cactus");
+        data.add("cactus");
+        data.add("[ˈkæktəs]");
+
+        data.add("ic_cards");
+        data.add("card");
+        data.add("[kɑːrd]");
+
+        data.add("ic_bag_with_money");
+        data.add("bag with money");
+        data.add("");
+
+        data.add("ic_gun");
+        data.add("gun");
+        data.add("[ɡʌn]");
+
+        data.add("ic_tepee");
+        data.add("tepee");
+        data.add("[ˈtiːpiː]");
+
+        data.add("ic_horse");
+        data.add("horse");
+        data.add("[hɔːrs]");
+
+        data.add("ic_axe");
+        data.add("axe");
+        data.add("[æks]");
+
+        data.add("ic_horseshoe");
+        data.add("horseshoe");
+        data.add("[ˈhɔːrʃʃuː]");
+
+        data.add("ic_guitar");
+        data.add("guitar");
+        data.add("[ɡɪˈtɑːr]");
+
+        data.add("ic_lamp");
+        data.add("lamp");
+        data.add("[læmp]");
+
+        data.add("ic_barrel");
+        data.add("barrel");
+        data.add("[ˈbærəl]");
+
+        data.add("ic_hat");
+        data.add("hat");
+        data.add("[hæt]");
+
+        data.add("ic_cartwheel");
+        data.add("cartwheel");
+        data.add("[ˈkɑːrtwiːl]");
+
+        data.add("ic_dynamite");
+        data.add("dynamite");
+        data.add("[ˈdaɪnəmaɪt]");
+
+        data.add("ic_bomb");
+        data.add("bomb");
+        data.add("[bɑːm]");
+
+        data.add("ic_whale");
+        data.add("whale");
+        data.add("[weɪl]");
+
+        data.add("ic_ship");
+        data.add("ship");
+        data.add("[ʃɪp]");
+
+        data.add("ic_bottle");
+        data.add("bottle");
+        data.add("[ˈbɑːtl]");
+
+        data.add("ic_cannon");
+        data.add("cannon");
+        data.add("[ˈkænən]");
+
+        data.add("ic_parrot");
+        data.add("parrot");
+        data.add("[ˈpærət]");
+
+        data.add("ic_lighthouse");
+        data.add("lighthouse");
+        data.add("[ˈlaɪthaʊs]");
+
+        data.add("ic_turtle");
+        data.add("turtle");
+        data.add("[ˈtɜːrtl]");
+
+        data.add("ic_swords");
+        data.add("swords");
+        data.add("[ˈsɔːrdz]");
+
+        data.add("ic_octopus");
+        data.add("octopus");
+        data.add("[ˈɑːktəpəs]");
+
+        data.add("ic_pirate");
+        data.add("pirate");
+        data.add("[ˈpaɪrət]");
+
+        data.add("ic_craps");
+        data.add("craps");
+        data.add("[kræps]");
 
     }
 
-    public void sentToGoogleTranslate(View view) {
-        try {
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_SEND);
-            intent.putExtra(Intent.EXTRA_TEXT, worldText);
-            intent.putExtra("key_text_input", worldText);
-            intent.putExtra("key_text_output", "");
-            intent.putExtra("key_language_from", "en");
-            intent.putExtra("key_language_to", "mal");
-            intent.putExtra("key_suggest_translation", "");
-            intent.putExtra("key_from_floating_window", false);
-            intent.setComponent(new ComponentName(
-                    "com.google.android.apps.translate",
-                    //Change is here
-                    //"com.google.android.apps.translate.HomeActivity"));
-                    "com.google.android.apps.translate.TranslateActivity"));
-            startActivity(intent);
-        } catch (ActivityNotFoundException e) {
-            // TODO Auto-generated catch block
-            Toast.makeText(getApplication(), "Sorry, No Google Translation Installed",
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
+
 }
 

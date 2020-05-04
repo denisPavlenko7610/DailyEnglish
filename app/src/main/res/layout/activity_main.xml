@@ -14,22 +14,23 @@
         android:id="@+id/count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         android:text="1"
         android:textAlignment="center"
         android:textSize="18sp"
         ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintHorizontal_bias="0.498"
+        ads:layout_constraintHorizontal_bias="0.089"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/questionImage"
         android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="108dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="64dp"
         android:src="@drawable/ic_001_apple"
         ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.0"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +38,7 @@
         android:id="@+id/textTranslate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:textSize="24sp"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintHorizontal_bias="0.501"
@@ -74,8 +75,8 @@
         android:id="@+id/buttonNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="64dp"
         android:background="@android:color/holo_green_light"
         android:onClick="buttonNo"
         android:text="Learn"
@@ -86,12 +87,12 @@
         android:id="@+id/buttonYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="64dp"
         android:background="@android:color/holo_red_light"
 
         android:onClick="buttonYes"
-        android:text="Remove"
+        android:text="I know"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintStart_toStartOf="parent" />
 
@@ -109,13 +110,16 @@
 
     <ImageView
         android:id="@+id/googleTranslate"
-        android:layout_width="32dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="60dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="24dp"
         android:onClick="sentToGoogleTranslate"
-        android:src="@drawable/ic_volume_up_black_24dp"
-        ads:layout_constraintEnd_toStartOf="@+id/textTranslate"
-        ads:layout_constraintTop_toBottomOf="@+id/questionImage" />
+        ads:layout_constraintBottom_toTopOf="@+id/adView"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.498"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/textTranscription"
+        ads:layout_constraintVertical_bias="0.0"
+        ads:srcCompat="@drawable/ic_translate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
