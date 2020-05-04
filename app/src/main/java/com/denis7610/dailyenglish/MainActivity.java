@@ -1,5 +1,7 @@
 package com.denis7610.dailyenglish;
 
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textTranslate;
     private TextView textTranscription;
     private AdView adView;
+
+    String worldText;
 
     private int arrayIndex = 0;
 
@@ -132,10 +136,10 @@ public class MainActivity extends AppCompatActivity {
 
         questionImage.setImageResource(getResources().getIdentifier(String.valueOf(data.get(arrayIndex)), "drawable", getPackageName()));
 
-        String text = String.valueOf(data.get(arrayIndex + 1));
+        worldText = String.valueOf(data.get(arrayIndex + 1));
         String transcription = String.valueOf(data.get(arrayIndex + 2));
 
-        textTranslate.setText(text);
+        textTranslate.setText(worldText);
         textTranscription.setText(transcription);
     }
 
@@ -437,6 +441,30 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void sentToGoogleTranslate(View view) {
+        try {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT, worldText);
+            intent.putExtra("key_text_input", worldText);
+            intent.putExtra("key_text_output", "");
+            intent.putExtra("key_language_from", "en");
+            intent.putExtra("key_language_to", "mal");
+            intent.putExtra("key_suggest_translation", "");
+            intent.putExtra("key_from_floating_window", false);
+            intent.setComponent(new ComponentName(
+                    "com.google.android.apps.translate",
+                    //Change is here
+                    //"com.google.android.apps.translate.HomeActivity"));
+                    "com.google.android.apps.translate.TranslateActivity"));
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            // TODO Auto-generated catch block
+            Toast.makeText(getApplication(), "Sorry, No Google Translation Installed",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 }
 
