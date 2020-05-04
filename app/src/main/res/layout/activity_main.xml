@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,10 +14,13 @@
         android:id="@+id/count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="16dp"
         android:text="1"
+        android:textAlignment="center"
         android:textSize="18sp"
+        ads:layout_constraintHorizontal_bias="0.498"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_constraintVertical_bias="0.049"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -25,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="170dp"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="111dp"
         android:src="@drawable/ic_001_apple"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,26 +39,24 @@
 
     <TextView
         android:id="@+id/textTranslate"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="146dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="147dp"
-        android:text="Translate"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionImage" />
+        app:layout_constraintTop_toBottomOf="@+id/questionImage"
+        tools:text="Translate" />
 
     <TextView
         android:id="@+id/textTranscription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="159dp"
         android:text="transcription"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -65,14 +67,16 @@
         android:id="@+id/button"
         android:layout_width="65dp"
         android:layout_height="20dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:background="#eee"
         android:onClick="showLicense"
         android:shadowColor="#eee"
         android:text="License info"
         android:textColor="#999"
         android:textSize="8dp"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintHorizontal_bias="0.953"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintVertical_bias="0.035"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,10 +84,13 @@
         android:id="@+id/buttonNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="100dp"
+        android:background="@android:color/holo_green_light"
         android:onClick="buttonNo"
-        android:text="I don`t know"
+        android:text="Learn"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -91,11 +98,27 @@
         android:id="@+id/buttonYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginBottom="100dp"
+        android:background="@android:color/holo_red_light"
         android:onClick="buttonYes"
-        android:text="I know"
+        android:text="Remove"
+        ads:layout_constraintHorizontal_bias="0.0"
+        ads:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"></com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
