@@ -13,6 +13,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.ads.consent.ConsentForm;
+import com.google.ads.consent.ConsentFormListener;
+import com.google.ads.consent.ConsentInfoUpdateListener;
+import com.google.ads.consent.ConsentInformation;
+import com.google.ads.consent.ConsentStatus;
+import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -22,9 +28,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private ConsentForm form;
     private TextView countText;
     private ImageView questionImage;
     private TextView textTranslate;
@@ -45,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         addBannerAdmob();
 
+        ESPolicy();
+
         loadData();
 
         init();
@@ -52,6 +63,81 @@ public class MainActivity extends AppCompatActivity {
         generateCard();
 
         showCount();
+    }
+
+    private void ESPolicy() {
+        ConsentInformation consentInformation = ConsentInformation.getInstance(getApplicationContext());
+        String[] publisherIds = {"pub-7173647303121367"};
+        consentInformation.requestConsentInfoUpdate(publisherIds, new ConsentInfoUpdateListener() {
+            @Override
+            public void onConsentInfoUpdated(ConsentStatus consentStatus) {
+                // User's consent status successfully updated.
+                boolean inEEA = ConsentInformation.getInstance(getApplicationContext()).isRequestLocationInEeaOrUnknown();
+
+                if (inEEA) {
+                    if (consentStatus == consentStatus.PERSONALIZED) {
+                        //no code
+                    } else if (consentStatus == consentStatus.NON_PERSONALIZED) {
+                        Bundle extras = new Bundle();
+                        extras.putString("npa", "1");
+
+                        AdRequest request = new AdRequest.Builder()
+                                .addNetworkExtrasBundle(AdMobAdapter.class, extras)
+                                .build();
+                    } else { //start code form
+
+                        URL privacyUrl = null;
+                        try {
+                            privacyUrl = new URL("https://wolfprogrammer.000webhostapp.com/");
+                        } catch (MalformedURLException e) {
+                            e.printStackTrace();
+                            // Handle error.
+                        }
+                        form = new ConsentForm.Builder(MainActivity.this, privacyUrl)
+                                .withListener(new ConsentFormListener() {
+                                    @Override
+                                    public void onConsentFormLoaded() {
+                                        // Consent form loaded successfully.
+                                        form.show();
+                                    }
+
+                                    @Override
+                                    public void onConsentFormOpened() {
+                                        // Consent form was displayed.
+                                    }
+
+                                    @Override
+                                    public void onConsentFormClosed(
+                                            ConsentStatus consentStatus, Boolean userPrefersAdFree) {
+                                        // Consent form was closed.
+                                        if (consentStatus == ConsentStatus.NON_PERSONALIZED) {
+                                            Bundle extras = new Bundle();
+                                            extras.putString("npa", "1");
+
+                                            AdRequest request = new AdRequest.Builder()
+                                                    .addNetworkExtrasBundle(AdMobAdapter.class, extras)
+                                                    .build();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onConsentFormError(String errorDescription) {
+                                        // Consent form error.
+                                    }
+                                })
+                                .withPersonalizedAdsOption()
+                                .withNonPersonalizedAdsOption()
+                                .build();
+                        form.load();
+                    } //end code form
+                }
+            }
+
+            @Override
+            public void onFailedToUpdateConsentInfo(String errorDescription) {
+                // User's consent status failed to update.
+            }
+        });
     }
 
     private void addBannerAdmob() {
@@ -107,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         }.getType();
         if (json != null) {
             data = gson.fromJson(json, type);
-        } else{
+        } else {
             generateQuizes();
         }
     }
@@ -151,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void deleteWord() {
-        if (data.size()>0) {
+        if (data.size() > 0) {
             for (int i = 0; i < 3; i++) {
                 data.remove(arrayIndex);
             }
