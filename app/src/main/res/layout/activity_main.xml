@@ -5,10 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eee"
+    android:background="#292525"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+
+    >
 
     <TextView
         android:id="@+id/count"
@@ -17,7 +19,8 @@
         android:layout_marginTop="24dp"
         android:text="1"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintHorizontal_bias="0.089"
         ads:layout_constraintStart_toStartOf="parent"
@@ -26,7 +29,7 @@
     <ImageView
         android:id="@+id/questionImage"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="190dp"
         android:layout_marginTop="64dp"
         android:src="@drawable/ic_001_apple"
         ads:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +41,8 @@
         android:id="@+id/textTranslate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintHorizontal_bias="0.501"
@@ -49,6 +53,7 @@
     <TextView
         android:id="@+id/textTranscription"
         android:layout_width="0dp"
+        android:textColor="@color/colorPrimary"
         android:layout_height="21dp"
         android:text="transcription"
         android:textSize="16sp"
@@ -66,6 +71,7 @@
         android:onClick="showLicense"
         android:shadowColor="#eee"
         android:text="License info"
+        android:backgroundTint="#555"
         android:textColor="#999"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,6 +81,7 @@
         android:id="@+id/buttonNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#e882fc"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="64dp"
         android:background="@android:color/holo_green_light"
@@ -86,6 +93,7 @@
     <Button
         android:id="@+id/buttonYes"
         android:layout_width="wrap_content"
+        android:backgroundTint="#83d5ff"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="64dp"
@@ -110,13 +118,12 @@
 
     <ImageView
         android:id="@+id/googleTranslate"
-        android:layout_width="60dp"
-        android:layout_height="63dp"
+        android:layout_width="49dp"
+        android:layout_height="64dp"
         android:layout_marginTop="24dp"
         android:onClick="sentToGoogleTranslate"
         ads:layout_constraintBottom_toTopOf="@+id/adView"
         ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintHorizontal_bias="0.498"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/textTranscription"
         ads:layout_constraintVertical_bias="0.0"
