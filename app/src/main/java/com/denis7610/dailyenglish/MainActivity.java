@@ -790,5 +790,86 @@ public class MainActivity extends AppCompatActivity {
         data.add("wheat");
         data.add("[wiːt]");
 
+        data.add("ic_backpack");
+        data.add("backpack");
+        data.add("[ˈbækpæk]");
+
+        data.add("ic_binoculars");
+        data.add("binoculars");
+        data.add("[bɪˈnɑːkjələrz]");
+
+        data.add("ic_boot");
+        data.add("boot");
+        data.add("[buːt]");
+
+        data.add("ic_camera");
+        data.add("camera");
+        data.add("[ˈkæmərə]");
+
+        data.add("ic_campfire");
+        data.add("campfire");
+        data.add("[ˈkæmpfaɪər]");
+
+        data.add("ic_canned_products");
+        data.add("canned products");
+        data.add("");
+
+        data.add("ic_compass");
+        data.add("compass");
+        data.add("[ˈkʌmpəs]");
+
+        data.add("ic_flashlight");
+        data.add("flashlight");
+        data.add("[ˈflæʃlaɪt]");
+
+        data.add("ic_forest");
+        data.add("forest");
+        data.add("[ˈfɔːrɪst]");
+
+        data.add("ic_guitar");
+        data.add("guitar");
+        data.add("[ɡɪˈtɑːr]");
+
+        data.add("ic_kettle");
+        data.add("kettle");
+        data.add("[ˈketl]");
+
+        data.add("ic_log");
+        data.add("log");
+        data.add("[lɔːɡ]");
+
+        data.add("ic_matches");
+        data.add("matches");
+        data.add("[ˈmætʃəz]");
+
+        data.add("ic_medkit");
+        data.add("medkit");
+        data.add("");
+
+        data.add("ic_mountains");
+        data.add("mountains");
+        data.add("[ˈmaʊntənz]");
+
+        data.add("ic_radio");
+        data.add("radio");
+        data.add("[ˈreɪdioʊ]");
+
+        data.add("ic_rifle");
+        data.add("rifle");
+        data.add("[ˈraɪfl]");
+
+        data.add("ic_rubber_boat");
+        data.add("rubber boat");
+        data.add("");
+
+        data.add("ic_sleeping_bag");
+        data.add("sleeping bag");
+        data.add("");
+
+        data.add("ic_tent");
+        data.add("tent");
+        data.add("tent");
+
+
     }
 }
