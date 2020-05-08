@@ -4,14 +4,17 @@ import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.ads.consent.ConsentForm;
 import com.google.ads.consent.ConsentFormListener;
@@ -36,10 +39,15 @@ public class MainActivity extends AppCompatActivity {
     private ConsentForm form;
     private TextView countText;
     private ImageView questionImage;
+    private ConstraintLayout mainBackground;
     private TextView textTranslate;
     private TextView textTranscription;
+    private ImageButton changeThemeButton;
+    private Button license;
     private AdView adView;
     private int count;
+
+    boolean checked = true;
 
     String worldText;
 
@@ -157,9 +165,10 @@ public class MainActivity extends AppCompatActivity {
         countText = findViewById(R.id.count);
         questionImage = findViewById(R.id.questionImage);
         textTranslate = findViewById(R.id.textTranslate);
+        mainBackground = findViewById(R.id.mainBackground);
         textTranscription = findViewById(R.id.textTranscription);
-        Button buttonNo = findViewById(R.id.buttonNo);
-        Button buttonYes = findViewById(R.id.buttonYes);
+        license = findViewById(R.id.licence);
+        changeThemeButton = findViewById(R.id.changeTheme);
     }
 
     @Override
@@ -203,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
         if (data.size() != 0) {
             count = data.size() / 3;
         }
-        String countString = "Pictures left: " + count;
+        String countString = "Images: " + count;
         countText.setText(countString);
     }
 
@@ -683,5 +692,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void changeTheme(View view) {
+        if (checked) {
+            mainBackground.setBackgroundColor(Color.parseColor("#eeeeee"));
+            countText.setTextColor(Color.parseColor("#333333"));
+            license.setBackgroundColor(Color.parseColor("#eeeeee"));
+            license.setTextColor(Color.parseColor("#333333"));
+            changeThemeButton.setImageResource(R.drawable.theme_dark);
+            license.setTextColor(Color.parseColor("#eeeeee"));
+            changeThemeButton.setBackgroundColor(Color.parseColor("#eeeeee"));
+            textTranscription.setTextColor(Color.parseColor("#333333"));
+            textTranslate.setTextColor(Color.parseColor("#333333"));
+            checked = false;
+        } else {
+            mainBackground.setBackgroundColor(Color.parseColor("#292525"));
+            countText.setTextColor(Color.parseColor("#ffffff"));
+            license.setBackgroundColor(Color.parseColor("#292525"));
+            license.setTextColor(Color.parseColor("#999999"));
+            changeThemeButton.setBackgroundColor(Color.parseColor("#292525"));
+            changeThemeButton.setImageResource(R.drawable.theme);
+            textTranscription.setTextColor(Color.parseColor("#ffffff"));
+            textTranslate.setTextColor(Color.parseColor("#ffffff"));
+            checked = true;
+        }
+    }
 }
 

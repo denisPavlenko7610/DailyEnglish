@@ -3,6 +3,7 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#292525"
@@ -53,25 +54,25 @@
     <TextView
         android:id="@+id/textTranscription"
         android:layout_width="0dp"
-        android:textColor="@color/colorPrimary"
         android:layout_height="21dp"
         android:text="transcription"
+        android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         ads:layout_constraintEnd_toEndOf="@+id/textTranslate"
         ads:layout_constraintStart_toStartOf="@+id/textTranslate"
         ads:layout_constraintTop_toBottomOf="@+id/textTranslate" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/licence"
         android:layout_width="65dp"
         android:layout_height="20dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:background="#eee"
+        android:backgroundTint="#555"
         android:onClick="showLicense"
         android:shadowColor="#eee"
         android:text="License info"
-        android:backgroundTint="#555"
         android:textColor="#999"
         android:textSize="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,10 +82,10 @@
         android:id="@+id/buttonNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#e882fc"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="64dp"
         android:background="@android:color/holo_green_light"
+        android:backgroundTint="#e882fc"
         android:onClick="buttonNo"
         android:text="Learn"
         ads:layout_constraintBottom_toBottomOf="parent"
@@ -93,11 +94,11 @@
     <Button
         android:id="@+id/buttonYes"
         android:layout_width="wrap_content"
-        android:backgroundTint="#83d5ff"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="64dp"
         android:background="@android:color/holo_red_light"
+        android:backgroundTint="#83d5ff"
 
         android:onClick="buttonYes"
         android:text="I know"
@@ -128,5 +129,17 @@
         ads:layout_constraintTop_toBottomOf="@+id/textTranscription"
         ads:layout_constraintVertical_bias="0.0"
         ads:srcCompat="@drawable/ic_translate" />
+
+    <ImageButton
+        android:id="@+id/changeTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:background="#292525"
+        android:onClick="changeTheme"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/count"
+        ads:srcCompat="@drawable/theme" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
