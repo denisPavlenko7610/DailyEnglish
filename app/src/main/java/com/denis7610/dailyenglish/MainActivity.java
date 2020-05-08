@@ -288,6 +288,31 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void changeTheme(View view) {
+        if (checked) {
+            mainBackground.setBackgroundColor(Color.parseColor("#eeeeee"));
+            countText.setTextColor(Color.parseColor("#333333"));
+            license.setBackgroundColor(Color.parseColor("#eeeeee"));
+            license.setTextColor(Color.parseColor("#333333"));
+            changeThemeButton.setImageResource(R.drawable.theme_dark);
+            license.setTextColor(Color.parseColor("#eeeeee"));
+            changeThemeButton.setBackgroundColor(Color.parseColor("#eeeeee"));
+            textTranscription.setTextColor(Color.parseColor("#333333"));
+            textTranslate.setTextColor(Color.parseColor("#333333"));
+            checked = false;
+        } else {
+            mainBackground.setBackgroundColor(Color.parseColor("#292525"));
+            countText.setTextColor(Color.parseColor("#ffffff"));
+            license.setBackgroundColor(Color.parseColor("#292525"));
+            license.setTextColor(Color.parseColor("#999999"));
+            changeThemeButton.setBackgroundColor(Color.parseColor("#292525"));
+            changeThemeButton.setImageResource(R.drawable.theme);
+            textTranscription.setTextColor(Color.parseColor("#ffffff"));
+            textTranslate.setTextColor(Color.parseColor("#ffffff"));
+            checked = true;
+        }
+    }
+
     private void generateQuizes() {
         data.add("ic_001_apple");
         data.add("apple");
@@ -689,32 +714,81 @@ public class MainActivity extends AppCompatActivity {
         data.add("craps");
         data.add("[kræps]");
 
-    }
+        data.add("ic_barn");
+        data.add("barn");
+        data.add("[bɑːrn]");
 
+        data.add("ic_bee");
+        data.add("bee");
+        data.add("[biː]");
 
-    public void changeTheme(View view) {
-        if (checked) {
-            mainBackground.setBackgroundColor(Color.parseColor("#eeeeee"));
-            countText.setTextColor(Color.parseColor("#333333"));
-            license.setBackgroundColor(Color.parseColor("#eeeeee"));
-            license.setTextColor(Color.parseColor("#333333"));
-            changeThemeButton.setImageResource(R.drawable.theme_dark);
-            license.setTextColor(Color.parseColor("#eeeeee"));
-            changeThemeButton.setBackgroundColor(Color.parseColor("#eeeeee"));
-            textTranscription.setTextColor(Color.parseColor("#333333"));
-            textTranslate.setTextColor(Color.parseColor("#333333"));
-            checked = false;
-        } else {
-            mainBackground.setBackgroundColor(Color.parseColor("#292525"));
-            countText.setTextColor(Color.parseColor("#ffffff"));
-            license.setBackgroundColor(Color.parseColor("#292525"));
-            license.setTextColor(Color.parseColor("#999999"));
-            changeThemeButton.setBackgroundColor(Color.parseColor("#292525"));
-            changeThemeButton.setImageResource(R.drawable.theme);
-            textTranscription.setTextColor(Color.parseColor("#ffffff"));
-            textTranslate.setTextColor(Color.parseColor("#ffffff"));
-            checked = true;
-        }
+        data.add("ic_chainsaw");
+        data.add("chainsaw");
+        data.add("");
+
+        data.add("ic_cow");
+        data.add("cow");
+        data.add("[kaʊ]");
+
+        data.add("ic_duck");
+        data.add("duck");
+        data.add("[dʌk]");
+
+        data.add("ic_farmer");
+        data.add("farmer");
+        data.add("[ˈfɑːrmər]");
+
+        data.add("ic_hayfork");
+        data.add("hayfork");
+        data.add("[ˈheɪfɔːrk]");
+
+        data.add("ic_hen");
+        data.add("hen");
+        data.add("[hen]");
+
+        data.add("ic_hose");
+        data.add("hose");
+        data.add("[hoʊz]");
+
+        data.add("ic_mill");
+        data.add("mill");
+        data.add("[mɪl]");
+
+        data.add("ic_pig");
+        data.add("pig");
+        data.add("[pɪɡ]");
+
+        data.add("ic_rabbit");
+        data.add("rabbit");
+        data.add("[ˈræbɪt]");
+
+        data.add("ic_sheep");
+        data.add("sheep");
+        data.add("[ʃiːp]");
+
+        data.add("ic_shovel");
+        data.add("shovel");
+        data.add("[ˈʃʌvl]");
+
+        data.add("ic_tractor");
+        data.add("tractor");
+        data.add("[ˈtræktər]");
+
+        data.add("ic_tree");
+        data.add("tree");
+        data.add("[triː]");
+
+        data.add("ic_watering_pot");
+        data.add("watering pot");
+        data.add("");
+
+        data.add("ic_well");
+        data.add("well");
+        data.add("[wel]");
+
+        data.add("ic_wheat");
+        data.add("wheat");
+        data.add("[wiːt]");
+
     }
 }
-
