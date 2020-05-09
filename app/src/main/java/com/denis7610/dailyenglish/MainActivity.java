@@ -364,7 +364,7 @@ public class MainActivity extends AppCompatActivity {
 
         data.add("ic_014_cherries");
         data.add("cherries");
-        data.add("ˈtʃeriz");
+        data.add("[ˈtʃeriz]");
 
         data.add("ic_015_tea");
         data.add("tea");
@@ -870,6 +870,117 @@ public class MainActivity extends AppCompatActivity {
         data.add("tent");
         data.add("tent");
 
+        data.add("ic_armchair");
+        data.add("armchair");
+        data.add("[ˈɑːrmtʃer]");
+
+        data.add("ic_bed");
+        data.add("bed");
+        data.add("[ˌbiː ˈed]");
+
+        data.add("ic_bookcase");
+        data.add("bookcase");
+        data.add("[ˈbʊkkeɪs]");
+
+        data.add("ic_chest");
+        data.add("chest");
+        data.add("[tʃest]");
+
+        data.add("ic_column");
+        data.add("column");
+        data.add("[ˈkɑːləm]");
+
+        data.add("ic_couch");
+        data.add("couch");
+        data.add("[kaʊtʃ]");
+
+        data.add("ic_curtain");
+        data.add("curtain");
+        data.add("[ˈkɜːrtn]");
+
+        data.add("ic_mirror");
+        data.add("mirror");
+        data.add("[ˈmɪrər]");
+
+        data.add("ic_picture");
+        data.add("picture");
+        data.add("[ˈpɪktʃər]");
+
+        data.add("ic_refrigerator");
+        data.add("refrigerator");
+        data.add("[rɪˈfrɪdʒəreɪtər]");
+
+        data.add("ic_vase");
+        data.add("vase");
+        data.add("[veɪs]");
+
+        data.add("ic_accordion");
+        data.add("accordion");
+        data.add("[əˈkɔːrdiən]");
+
+        data.add("ic_drum_set");
+        data.add("drum set");
+        data.add("");
+
+        data.add("ic_drum");
+        data.add("drum");
+        data.add("[drʌm]");
+
+        data.add("ic_earphones");
+        data.add("earphones");
+        data.add("[ˈɪərˌfoʊnz]");
+
+        data.add("ic_electric_guitar");
+        data.add("electric guitar");
+        data.add("");
+
+        data.add("ic_harp");
+        data.add("harp");
+        data.add("[hɑːrp]");
+
+        data.add("ic_headphones");
+        data.add("headphones");
+        data.add("[ˈhedˌfoʊnz]");
+
+        data.add("ic_maracas");
+        data.add("maracas");
+        data.add("");
+
+        data.add("ic_metronome");
+        data.add("metronome");
+        data.add("[ˈmetrənoʊm]");
+
+        data.add("ic_microphone");
+        data.add("microphone");
+        data.add("[ˈmaɪkrəfoʊn]");
+
+        data.add("ic_note");
+        data.add("note");
+        data.add("[noʊt]");
+
+        data.add("ic_piano");
+        data.add("piano");
+        data.add("[piˈænoʊ]");
+
+        data.add("ic_records");
+        data.add("records");
+        data.add("[rəˈkɔːrdz]");
+
+        data.add("ic_saxophone");
+        data.add("saxophone");
+        data.add("[ˈsæksəfoʊn]");
+
+        data.add("ic_trumpet");
+        data.add("trumpet");
+        data.add("[ˈtrʌmpɪt]");
+
+        data.add("ic_violin");
+        data.add("violin");
+        data.add("[ˌvaɪəˈlɪn]");
+
+        data.add("ic_xylophone");
+        data.add("xylophone");
+        data.add("[ˈzaɪləfoʊn]");
 
     }
 }
