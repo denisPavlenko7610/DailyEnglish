@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean inEEA = ConsentInformation.getInstance(getApplicationContext()).isRequestLocationInEeaOrUnknown();
 
                 if (inEEA) {
+                    //noinspection StatementWithEmptyBody
                     if (consentStatus == consentStatus.PERSONALIZED) {
                         //no code
                     } else if (consentStatus == consentStatus.NON_PERSONALIZED) {
@@ -982,5 +983,28 @@ public class MainActivity extends AppCompatActivity {
         data.add("xylophone");
         data.add("[ˈzaɪləfoʊn]");
 
+        data.add("ic_keyboard");
+        data.add("keyboard");
+        data.add("[ˈkiːbɔːrd]");
+
+        data.add("ic_notebook");
+        data.add("notebook");
+        data.add("[ˈnoʊtbʊk]");
+
+        data.add("ic_phone");
+        data.add("phone");
+        data.add("[foʊn]");
+
+        data.add("ic_pipette");
+        data.add("pipette");
+        data.add("[paɪˈpet]");
+
+        data.add("ic_tablet");
+        data.add("tablet");
+        data.add("[ˈtæblət]");
+
+        data.add("ic_usb_stick");
+        data.add("usb stick");
+        data.add("");
     }
 }
