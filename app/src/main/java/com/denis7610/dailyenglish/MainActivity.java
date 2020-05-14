@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
                         URL privacyUrl = null;
                         try {
-                            privacyUrl = new URL("https://wolfprogrammer.000webhostapp.com/");
+                            privacyUrl = new URL("https://drive.google.com/open?id=1vkv7fFa5XYxwT4gRWVq-3FGzWurVDDKInDXS1siGMtE");
                         } catch (MalformedURLException e) {
                             e.printStackTrace();
                             // Handle error.
