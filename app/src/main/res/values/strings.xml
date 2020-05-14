@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">DailyEnglish</string>
-    <string name="banner_ad_unit_id" >ca-app-pub-7173647303121367/5049722218</string>
+    <string name="app_name">Английский по картинкам</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-7173647303121367/5049722218</string>
 </resources>
